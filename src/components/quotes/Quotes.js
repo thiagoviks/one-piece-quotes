@@ -7,7 +7,7 @@ export const Quotes = ({ quote, speaker, onUpdate = () => {} }) => {
     <Wrapper>
       <Quote>"{quote}"</Quote>
       <Speaker>- {speaker}</Speaker>
-      <Button onClick={onUpdate}>Quote No Jutsu</Button>
+      <Button onClick={onUpdate}>Akuma no Quote</Button>
     </Wrapper>
   );
 };
@@ -15,7 +15,7 @@ export const Quotes = ({ quote, speaker, onUpdate = () => {} }) => {
 Quotes.propTypes = {
   quote: string,
   speaker: string,
-  onUpdate: func
+  onUpdate: func,
 };
 
 const Wrapper = styled.div`
@@ -27,7 +27,7 @@ const Wrapper = styled.div`
 
 const Quote = styled.p`
   font-size: 2em;
-  text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 1px;
+  text-shadow: 2px 2px #fff;
   flex: 1;
   margin: 0;
 `;
@@ -35,5 +35,4 @@ const Quote = styled.p`
 const Speaker = styled(Quote)`
   text-align: right;
   width: 100%;
-  margin-bottom: 50px;
 `;

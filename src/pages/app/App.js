@@ -1,17 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import narutoImg from '../../images/naruto.png';
-import jutsoSound from '../../sounds/jutso.mp3';
+import luffyImg from '../../images/luffy.png';
+import gomuGomu from '../../sounds/gomu-gomu.mp3';
 import { Quotes } from '../../components';
 import { getQuote } from '../../services';
 
-const audio = new Audio(jutsoSound);
+const audio = new Audio(gomuGomu);
 
 export function App() {
   const isMounted = useRef(true);
   const [quote, setQuote] = useState({
     speaker: 'Loading speaker...',
-    quote: 'Loading Quote'
+    quote: 'Loading Quote',
   });
 
   const onUpdate = async () => {
@@ -34,7 +34,7 @@ export function App() {
   return (
     <Content>
       <Quotes {...quote} onUpdate={onUpdate} />
-      <NarutoImg alt="Naruto holding a kunai" src={narutoImg} />
+      <OnePieceImg alt='One Piece' src={luffyImg} />
     </Content>
   );
 }
@@ -49,7 +49,7 @@ const Content = styled.div`
   align-items: center;
 `;
 
-const NarutoImg = styled.img`
-  max-width: 50vw;
+const OnePieceImg = styled.img`
+  max-width: 30vw;
   align-self: flex-end;
 `;
